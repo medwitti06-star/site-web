@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ELG Rénovation - Excellence Énergétique</title>
-    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -66,7 +64,6 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-elg-primary selection:text-white">
 
-    <!-- 1. HEADER PREMIUM -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent py-6">
         <div class="container mx-auto px-6 max-w-7xl flex justify-between items-center">
             <div class="text-2xl font-extrabold tracking-tight text-white transition-colors duration-300 flex items-center gap-2" id="header-logo">
@@ -77,17 +74,16 @@
                 <a href="index.html" class="hover:text-elg-cta transition relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-elg-cta after:transition-all">Accueil</a>
                 <a href="services.html" class="hover:text-elg-cta transition relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-elg-cta after:transition-all">Services</a>
                 <a href="aides.html" class="hover:text-elg-cta transition relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-elg-cta after:transition-all">Aides</a>
-                <a href="nos realisations.html" class="hover:text-elg-cta transition relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-elg-cta after:transition-all">Réalisations</a>
+                <a href="nos-realisations.html" class="hover:text-elg-cta transition relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-elg-cta after:transition-all">Réalisations</a>
                 <a href="contact.html" class="hover:text-elg-cta transition relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-elg-cta after:transition-all">Contact</a>
             </nav>
-            <a href="#contact" class="relative group overflow-hidden bg-elg-cta text-white font-bold px-6 py-3 rounded-xl transition duration-300 shadow-md hover:shadow-glow hover:scale-[1.03] active:scale-[0.98]">
+            <a href="contact.html" class="relative group overflow-hidden bg-elg-cta text-white font-bold px-6 py-3 rounded-xl transition duration-300 shadow-md hover:shadow-glow hover:scale-[1.03] active:scale-[0.98]">
                 <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-400 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 <span class="relative z-10 flex items-center gap-2">Demander un devis <span>→</span></span>
             </a>
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
     <section class="relative bg-gradient-to-br from-slate-900 via-elg-dark to-elg-primary pt-48 pb-32 px-6 overflow-hidden min-h-[90vh] flex items-center">
         <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-emerald-500/20 rounded-full blur-[120px] pointer-events-none animate-pulse duration-[6s]"></div>
         <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -107,7 +103,7 @@
                     <a href="#simulateur" class="group bg-gradient-to-r from-elg-cta to-amber-500 text-white font-bold text-center px-8 py-4 rounded-xl shadow-lg hover:shadow-glow hover:scale-[1.03] transition-all duration-300">
                         Tester mon éligibilité en 2 min
                     </a>
-                    <a href="#contact" class="backdrop-blur-sm bg-white/5 border border-white/20 text-center text-white font-semibold px-8 py-4 rounded-xl hover:bg-white hover:text-elg-dark transition-all duration-300">
+                    <a href="nos-realisations.html" class="backdrop-blur-sm bg-white/5 border border-white/20 text-center text-white font-semibold px-8 py-4 rounded-xl hover:bg-white hover:text-elg-dark transition-all duration-300">
                         Voir nos réalisations
                     </a>
                 </div>
@@ -132,35 +128,29 @@
         </div>
     </section>
 
-    <!-- 3. BANDE DE CONFIANCE SÉCURISANTE ET ULTRA-ANIMÉE -->
     <section class="bg-white py-12 border-b border-slate-100 shadow-sm relative z-20 overflow-hidden">
         <div class="container mx-auto px-6 max-w-7xl grid grid-cols-2 md:grid-cols-5 gap-6 text-center items-center">
             
-            <!-- Bloc 1 : Avis Google Animé -->
             <div class="animate-premium-float flex flex-col items-center justify-center p-5 rounded-2xl bg-slate-50/40 border border-transparent hover:border-amber-200 hover:bg-amber-50/30 hover:shadow-md transition-all duration-300" style="animation-delay: 0s;">
                 <div class="flex items-center gap-0.5 text-elg-cta text-lg font-bold drop-shadow-sm tracking-wide animate-pulse">★★★★★</div>
                 <span class="text-xs font-bold text-slate-700 mt-2 tracking-wide">Avis Clients Google</span>
             </div>
             
-            <!-- Bloc 2 : Compteur de projets dynamique -->
             <div class="animate-premium-float flex flex-col items-center justify-center p-5 rounded-2xl bg-slate-50/40 border border-transparent hover:border-emerald-200 hover:bg-emerald-50/30 hover:shadow-md transition-all duration-300" style="animation-delay: 0.3s;">
                 <span id="counter-projets" class="text-transparent bg-clip-text bg-gradient-to-r from-elg-primary to-emerald-500 font-black text-3xl tracking-tight">+0</span>
                 <span class="text-xs font-bold text-slate-700 mt-1 tracking-wide">Projets cette année</span>
             </div>
             
-            <!-- Bloc 3 : Label RGE premium -->
             <div class="animate-premium-float flex flex-col items-center justify-center p-5 rounded-2xl bg-slate-50/40 border border-transparent hover:border-blue-200 hover:bg-blue-50/40 hover:shadow-md transition-all duration-300 group" style="animation-delay: 0.6s;">
                 <div class="text-lg tracking-widest font-black text-blue-600 bg-blue-50/80 px-5 py-2 rounded-xl border border-blue-100 shadow-sm group-hover:scale-105 transition-transform duration-300">RGE</div>
                 <span class="text-[10px] font-semibold text-slate-400 mt-2 uppercase tracking-wider">Éligibilité Aux Aides</span>
             </div>
             
-            <!-- Bloc 4 : Label QUALIBAT premium -->
             <div class="animate-premium-float flex flex-col items-center justify-center p-5 rounded-2xl bg-slate-50/40 border border-transparent hover:border-sky-200 hover:bg-sky-50/40 hover:shadow-md transition-all duration-300 group" style="animation-delay: 0.9s;">
                 <div class="text-lg font-black text-sky-800 bg-sky-50/80 px-5 py-2 rounded-xl border border-sky-100 shadow-sm group-hover:scale-105 transition-transform duration-300">QUALIBAT</div>
                 <span class="text-[10px] font-semibold text-slate-400 mt-2 uppercase tracking-wider">Garantie Métier</span>
             </div>
             
-            <!-- Bloc 5 : Garantie Décennale 10 Ans avec point d'alerte pulsant -->
             <div class="col-span-2 md:col-span-1 animate-premium-float flex flex-col items-center justify-center p-5 rounded-2xl bg-slate-50/40 border border-transparent hover:border-emerald-200 hover:bg-emerald-50/40 hover:shadow-md transition-all duration-300" style="animation-delay: 1.2s;">
                 <div class="flex items-center gap-2 text-xs font-extrabold text-emerald-700 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-100 shadow-sm">
                     <span class="relative flex h-2 w-2">
@@ -175,7 +165,6 @@
         </div>
     </section>
 
-    <!-- 4. SERVICES -->
     <section id="services" class="py-28 px-6 bg-slate-50">
         <div class="container mx-auto max-w-7xl">
             <div class="text-center max-w-2xl mx-auto mb-20">
@@ -193,7 +182,7 @@
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Isolation Thermique</h3>
                         <p class="text-xs text-slate-500 leading-relaxed">Murs extérieurs, combles perdus ou aménagés. Stoppez les pertes thermiques.</p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
+                    <a href="services.html" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
                 </div>
 
                 <div class="group bg-white rounded-2xl p-8 shadow-premium border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-glow-primary flex flex-col justify-between h-80">
@@ -204,7 +193,7 @@
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Pompe à Chaleur</h3>
                         <p class="text-xs text-slate-500 leading-relaxed">Système Air/Eau performant pour remplacer votre ancienne chaudière énergivore.</p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
+                    <a href="services.html" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
                 </div>
 
                 <div class="group bg-white rounded-2xl p-8 shadow-premium border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-glow-primary flex flex-col justify-between h-80">
@@ -215,7 +204,7 @@
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Ventilation VMC</h3>
                         <p class="text-xs text-slate-500 leading-relaxed">VMC Double Flux pour un air sain, purifié et une régulation hygrométrique idéale.</p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
+                    <a href="services.html" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
                 </div>
 
                 <div class="group bg-white rounded-2xl p-8 shadow-premium border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-glow-primary flex flex-col justify-between h-80">
@@ -226,7 +215,7 @@
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Rénovation Globale</h3>
                         <p class="text-xs text-slate-500 leading-relaxed">Pack complet multi-travaux pour maximiser le gain énergétique et vos aides de l'État.</p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
+                    <a href="services.html" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
                 </div>
 
                 <div class="group bg-white rounded-2xl p-8 shadow-premium border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-glow-primary flex flex-col justify-between h-80">
@@ -237,19 +226,18 @@
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Audit Énergétique</h3>
                         <p class="text-xs text-slate-500 leading-relaxed">Analyse complète de l'habitat pour planifier intelligemment vos rénovations.</p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
+                    <a href="services.html" class="inline-flex items-center gap-2 text-sm font-bold text-elg-primary group-hover:text-elg-cta transition-colors">Découvrir <span>→</span></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. SLIDER AVANT/APRÈS INTERACTIF -->
     <section id="realisations" class="py-28 px-6 bg-white relative">
         <div class="container mx-auto max-w-4xl">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-elg-primary font-bold tracking-wider uppercase text-sm">Preuves en image</span>
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Des résultats remarquables</h2>
-                <p class="text-slate-500 text-sm mt-3">Glissez le curseur central de gauche à droite pour apprécier la qualité de nos ravalements isolants thermiques.</p>
+                <p class="text-slate-500 text-sm mt-3">Glissez le curseur central de gauche à droite pour apprécier la quality de nos ravalements isolants thermiques.</p>
             </div>
             
             <div class="slider-container w-full h-[480px] sm:h-[540px] rounded-3xl shadow-2xl border border-slate-100 group select-none">
@@ -272,7 +260,6 @@
         </div>
     </section>
 
-    <!-- 6. SIMULATEUR ACCORDÉON APPLICATION -->
     <section id="simulateur" class="py-28 px-6 bg-gradient-to-br from-elg-dark to-slate-950 text-white">
         <div class="container mx-auto max-w-3xl bg-white text-slate-800 p-8 md:p-14 rounded-3xl shadow-premium relative">
             <div class="text-center mb-10">
@@ -342,7 +329,6 @@
         </div>
     </section>
 
-    <!-- 7. SECTION CONTACT -->
     <section id="contact" class="py-28 px-6 bg-white">
         <div class="container mx-auto max-w-4xl bg-slate-50 p-8 md:p-14 rounded-3xl border border-slate-100">
             <div class="text-center mb-10">
@@ -360,7 +346,6 @@
         </div>
     </section>
 
-    <!-- 8. FOOTER -->
     <footer class="bg-slate-950 text-slate-400 py-16 px-6 relative z-10">
         <div class="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-12">
             <div class="space-y-4">
@@ -370,9 +355,9 @@
             <div>
                 <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Services</h4>
                 <ul class="text-xs space-y-2">
-                    <li><a href="#services" class="hover:text-white transition">Isolation thermique extérieure</a></li>
-                    <li><a href="#services" class="hover:text-white transition">Pompe à chaleur Air/Eau</a></li>
-                    <li><a href="#services" class="hover:text-white transition">Rénovation globale clé en main</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Isolation thermique extérieure</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Pompe à chaleur Air/Eau</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Rénovation globale clé en main</a></li>
                 </ul>
             </div>
             <div>
@@ -392,7 +377,6 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVITÉ JAVASCRIPT -->
     <script>
         window.addEventListener('scroll', function() {
             const header = document.getElementById('main-header');
