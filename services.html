@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - ELG Rénovation</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'elg-primary': '#1F6B43',
+                        'elg-dark': '#113F27',
+                        'elg-light': '#F3F7F5',
+                        'elg-cta': '#F59E0B',
+                        'elg-accent': '#10B981'
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 50px -12px rgba(17, 63, 39, 0.08)',
+                        'glow': '0 0 25px rgba(245, 158, 11, 0.45)',
+                        'glow-primary': '0 0 25px rgba(31, 107, 67, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .service-panel { display: none; opacity: 0; transform: translateY(10px); transition: all 0.4s ease-in-out; }
+        .service-panel.active { display: block; opacity: 1; transform: translateY(0); }
+        .tab-btn.active { background-color: #1F6B43; color: white; border-color: #1F6B43; box-shadow: 0 0 20px rgba(31, 107, 67, 0.2); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-elg-primary selection:text-white">
+
+    <!-- 1. HEADER FILIGRANE (Glassmorphism identique à l'accueil) -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-slate-950/20 backdrop-blur-md py-4 shadow-premium">
+        <div class="container mx-auto px-6 max-w-7xl flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2" id="header-logo">
+                <span class="bg-elg-primary text-white w-8 h-8 rounded-lg flex items-center justify-center font-black shadow-md">E</span>
+                <span class="text-white">ELG <span class="font-light text-emerald-400">Rénovation</span></span>
+            </div>
+            <nav class="hidden lg:flex items-center space-x-10 font-medium text-white/90">
+                <a href="index.html" class="hover:text-elg-cta transition">Accueil</a>
+                <a href="#" class="text-elg-cta font-bold relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-elg-cta">Services</a>
+                <a href="index.html#simulateur" class="hover:text-elg-cta transition">Aides</a>
+                <a href="index.html#realisations" class="hover:text-elg-cta transition">Réalisations</a>
+                <a href="index.html#contact" class="hover:text-elg-cta transition">Contact</a>
+            </nav>
+            <a href="index.html#contact" class="relative group overflow-hidden bg-elg-cta text-white font-bold px-6 py-3 rounded-xl transition duration-300 shadow-md hover:shadow-glow">
+                <span class="relative z-10 flex items-center gap-2">Devis Gratuit <span>→</span></span>
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. HERO BANNER - EXPERTISE -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-elg-dark to-elg-primary pt-44 pb-24 px-6 overflow-hidden">
+        <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="container mx-auto max-w-5xl text-center relative z-10 space-y-6">
+            <span class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-400/20 px-4 py-1.5 rounded-full text-emerald-400 font-semibold text-xs uppercase tracking-wider">
+                Solutions Certifiées RGE — 2026
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-black text-white leading-tight tracking-tight">
+                Nos Prestations de <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-400">Rénovation Globale</span>
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">
+                Découvrez en détail nos compétences techniques pour transformer votre bien immobilier en un espace éco-efficient, valorisé et parfaitement isolé.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. CONFIGURATEUR INTERACTIF (L'élément central "Wahou") -->
+    <section class="py-24 px-6 bg-white relative z-20">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-elg-primary font-bold tracking-wider uppercase text-xs">Exploration interactive</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Spécifications techniques de nos métiers</h2>
+                <p class="text-slate-500 text-xs mt-2">Cliquez sur les différents onglets pour analyser nos solutions, les subventions d'État associées et les gains de performance attendus.</p>
+            </div>
+
+            <!-- Onglets de Navigation Tactiles et Fluides -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 border-b border-slate-100 pb-8">
+                <button onclick="switchService('isolation')" class="tab-btn active border-2 border-slate-200 text-slate-700 font-semibold px-5 py-3 rounded-xl text-xs sm:text-sm transition-all duration-300 hover:border-elg-primary flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    Isolation Thermique
+                </button>
+                <button onclick="switchService('pompe')" class="tab-btn border-2 border-slate-200 text-slate-700 font-semibold px-5 py-3 rounded-xl text-xs sm:text-sm transition-all duration-300 hover:border-elg-primary flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    Pompe à Chaleur
+                </button>
+                <button onclick="switchService('vmc')" class="tab-btn border-2 border-slate-200 text-slate-700 font-semibold px-5 py-3 rounded-xl text-xs sm:text-sm transition-all duration-300 hover:border-elg-primary flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707"></path></svg>
+                    Ventilation VMC
+                </button>
+                <button onclick="switchService('globale')" class="tab-btn border-2 border-slate-200 text-slate-700 font-semibold px-5 py-3 rounded-xl text-xs sm:text-sm transition-all duration-300 hover:border-elg-primary flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622"></path></svg>
+                    Rénovation Globale
+                </button>
+            </div>
+
+            <!-- Contenus Dynamiques des Panneaux -->
+            <div class="bg-slate-50 rounded-3xl p-6 md:p-12 border border-slate-100 shadow-premium">
+                
+                <!-- PANNEAU 1 : ISOLATION -->
+                <div id="panel-isolation" class="service-panel active">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <span class="text-xs font-bold text-emerald-600 uppercase bg-emerald-50 px-3 py-1 rounded-md">Performance Enveloppe Bâtiment</span>
+                            <h3 class="text-2xl font-bold text-slate-900">Isolation Thermique par l'Extérieur (ITE) & Combles</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Nous neutralisons définitivement vos ponts thermiques en enveloppant votre maison d'un bouclier isolant haute densité. Idéal pour conserver la fraîcheur en été et retenir la chaleur en hiver sans perdre de surface habitable carrée à l'intérieur.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Jusqu'à 30% d'économies de chauffage immédiates</li>
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Valorisation immédiate de la valeur verte de votre patrimoine (DPE)</li>
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Matériaux biosourcés durables certifiés ACERMI</li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-4">
+                            <div class="text-center pb-4 border-b border-slate-100">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Aides d'État Applicables 2026</span>
+                                <div class="text-3xl font-black text-elg-primary mt-1">Jusqu'à 75% subsidie</div>
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between"><strong>MaPrimeRénov' :</strong> <span class="text-emerald-600 font-bold">Éligible</span></div>
+                                <div class="flex justify-between"><strong>Primes CEE :</strong> <span class="text-emerald-600 font-bold">Cumulable</span></div>
+                                <div class="flex justify-between"><strong>TVA :</strong> <span class="text-slate-600 font-semibold">Réduite à 5.5%</span></div>
+                            </div>
+                            <a href="index.html#contact" class="block text-center bg-elg-primary text-white text-xs font-bold py-3.5 rounded-xl shadow-md hover:bg-emerald-900 transition">Calculer mes subventions précises</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANNEAU 2 : POMPE À CHALEUR -->
+                <div id="panel-pompe" class="service-panel">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <span class="text-xs font-bold text-emerald-600 uppercase bg-emerald-50 px-3 py-1 rounded-md">Systèmes Thermiques Durables</span>
+                            <h3 class="text-2xl font-bold text-slate-900">Pompes à Chaleur (PAC) Air/Eau Haute Performance</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Substituez votre ancienne chaudière fioul ou gaz par un système de chauffage propre et ultra-performant. Nos pompes à chaleur puisent les calories gratuites présentes dans l'air extérieur pour alimenter vos radiateurs et votre eau chaude sanitaire.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Division par 3 de vos factures de consommations énergétiques</li>
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Matériel de marques leaders mondiales (Daikin, Atlantic)</li>
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Suivi connecté et régulation thermique pièce par pièce</li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-4">
+                            <div class="text-center pb-4 border-b border-slate-100">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Rendement Énergétique (COP)</span>
+                                <div class="text-3xl font-black text-elg-primary mt-1">COP supérieur à 4.2</div>
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between"><strong>Maintenance :</strong> <span class="text-slate-600 font-semibold">Contrat annuel inclus</span></div>
+                                <div class="flex justify-between"><strong>Aide coup de pouce :</strong> <span class="text-emerald-600 font-bold">Inclus d'office</span></div>
+                                <div class="flex justify-between"><strong>Garantie :</strong> <span class="text-slate-600 font-semibold">5 ans compresseur</span></div>
+                            </div>
+                            <a href="index.html#contact" class="block text-center bg-elg-primary text-white text-xs font-bold py-3.5 rounded-xl shadow-md hover:bg-emerald-900 transition">Demander une étude de faisabilité</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANNEAU 3 : VMC -->
+                <div id="panel-vmc" class="service-panel">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <span class="text-xs font-bold text-emerald-600 uppercase bg-emerald-50 px-3 py-1 rounded-md">Qualité de l'Air Intérieur</span>
+                            <h3 class="text-2xl font-bold text-slate-900">Ventilation Mécanique Contrôlée Hygrorégulée & Double Flux</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Une bonne isolation n'a de sens que si l'air est parfaitement renouvelé. Nos systèmes de VMC intelligents extraient l'humidité et les polluants intérieurs tout en récupérant les calories de l'air sortant pour préchauffer l'air neuf entrant.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Élimination totale des risques de condensation et moisissures</li>
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Filtration active des pollens, poussières et particules fines</li>
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Moteurs ultra-silencieux à basse consommation électrique</li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-4">
+                            <div class="text-center pb-4 border-b border-slate-100">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Impact Sanitaire</span>
+                                <div class="text-3xl font-black text-emerald-600 mt-1">Air Purifié 24h/24</div>
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between"><strong>Économie additionnelle :</strong> <span class="text-slate-600 font-semibold">Jusqu'à 10% sur le chauffage</span></div>
+                                <div class="flex justify-between"><strong>Discrétion :</strong> <span class="text-slate-600 font-semibold">&lt; 22 dB(A) acoustique</span></div>
+                            </div>
+                            <a href="index.html#contact" class="block text-center bg-elg-primary text-white text-xs font-bold py-3.5 rounded-xl shadow-md hover:bg-emerald-900 transition">Étudier ma configuration VMC</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANNEAU 4 : RÉNOVATION GLOBALE -->
+                <div id="panel-globale" class="service-panel">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <span class="text-xs font-bold text-amber-600 uppercase bg-amber-50 px-3 py-1 rounded-md">Optimisation Maximale</span>
+                            <h3 class="text-2xl font-bold text-slate-900">Forfait Rénovation Énergétique Globale Clé en Main</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Le choix stratégique par excellence pour restructurer intégralement les performances de votre maison. Nous combinons plusieurs postes de travaux (isolation + système de chauffage + ventilation) pour franchir plusieurs paliers du DPE d'un seul coup.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Un interlocuteur technique et administratif unique de A à Z</li>
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Saut de DPE garanti (Ex : Sortie du statut de Passoire F/G vers B/C)</li>
+                                <li class="flex items-center gap-3"><span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs">✓</span> Montage financier des dossiers d'aides géré en interne par nos soins</li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-4">
+                            <div class="text-center pb-4 border-b border-slate-100">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Subventions d'Envergure Parcours Accompagné</span>
+                                <div class="text-3xl font-black text-amber-500 mt-1">Jusqu'à 35 000 €</div>
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between"><strong>Audit pré-travaux :</strong> <span class="text-emerald-600 font-bold">Obligatoire et pris en charge</span></div>
+                                <div class="flex justify-between"><strong>Taux de prise en charge :</strong> <span class="text-slate-600 font-semibold">Selon barème fiscal</span></div>
+                            </div>
+                            <a href="index.html#simulateur" class="block text-center bg-gradient-to-r from-elg-cta to-amber-500 text-white text-xs font-bold py-3.5 rounded-xl shadow-md hover:shadow-glow transition">Lancer ma simulation globale</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECTION PROCESSUS - ANIMÉE ET COMPACTE -->
+    <section class="py-24 px-6 bg-slate-50 border-t border-b border-slate-100">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <span class="text-elg-primary font-bold tracking-wider uppercase text-xs">Méthodologie d'Excellence</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Votre parcours de rénovation en 4 étapes</h2>
+                <div class="w-12 h-1 bg-elg-cta mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Étape 1 -->
+                <div class="group bg-white p-6 rounded-2xl border border-slate-100 shadow-premium transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-10 h-10 bg-emerald-50 text-elg-primary font-bold rounded-xl flex items-center justify-center mb-4 text-sm group-hover:bg-elg-primary group-hover:text-white transition-colors">01</div>
+                    <h4 class="text-base font-bold text-slate-900 mb-2">Audit Énergétique</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Ingénieurs thermiciens dédiés pour analyser scientifiquement l'état initial de votre logement.</p>
+                </div>
+                <!-- Étape 2 -->
+                <div class="group bg-white p-6 rounded-2xl border border-slate-100 shadow-premium transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-10 h-10 bg-emerald-50 text-elg-primary font-bold rounded-xl flex items-center justify-center mb-4 text-sm group-hover:bg-elg-primary group-hover:text-white transition-colors">02</div>
+                    <h4 class="text-base font-bold text-slate-900 mb-2">Plan de Financement</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Calcul précis des aides cumulables (ANAH, MaPrimeRénov') pour minimiser votre reste à charge.</p>
+                </div>
+                <!-- Étape 3 -->
+                <div class="group bg-white p-6 rounded-2xl border border-slate-100 shadow-premium transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-10 h-10 bg-emerald-50 text-elg-primary font-bold rounded-xl flex items-center justify-center mb-4 text-sm group-hover:bg-elg-primary group-hover:text-white transition-colors">03</div>
+                    <h4 class="text-base font-bold text-slate-900 mb-2">Chantier Certifié RGE</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Mise en œuvre soignée et rigoureuse par nos techniciens intégrés sous assurance décennale.</p>
+                </div>
+                <!-- Étape 4 -->
+                <div class="group bg-white p-6 rounded-2xl border border-slate-100 shadow-premium transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-10 h-10 bg-emerald-50 text-elg-primary font-bold rounded-xl flex items-center justify-center mb-4 text-sm group-hover:bg-elg-primary group-hover:text-white transition-colors">04</div>
+                    <h4 class="text-base font-bold text-slate-900 mb-2">Livraison & Validation</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Contrôle de conformité thermique post-travaux pour valider officiellement vos gains de classe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. BANNER FINAL APPEL À L'ACTION -->
+    <section class="py-20 px-6 bg-gradient-to-br from-elg-dark to-slate-950 text-white relative overflow-hidden text-center">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.1),transparent_60%)]"></div>
+        <div class="container mx-auto max-w-3xl relative z-10 space-y-6">
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Prêt à transformer l'efficacité de votre habitation ?</h2>
+            <p class="text-slate-300 font-light text-sm max-w-xl mx-auto">Nos devis techniques et simulations financières avancées sont gratuits, transparents et sans aucun engagement de votre part.</p>
+            <div class="pt-4">
+                <a href="index.html#contact" class="inline-block bg-gradient-to-r from-elg-cta to-amber-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-glow hover:scale-[1.03] transition-all duration-300 text-sm">
+                    Prendre rendez-vous avec un conseiller
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER COMPLET DE SÉCURISATION -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-6 relative z-10 text-xs border-t border-white/5">
+        <div class="container mx-auto max-w-7xl flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
+            <div>
+                <div class="text-white font-black text-base mb-1">ELG Rénovation</div>
+                <p class="text-slate-500">Expert technique certifié RGE Qualibat en rénovation globale.</p>
+            </div>
+            <div class="flex gap-6 text-slate-400 font-medium">
+                <a href="index.html" class="hover:text-white transition">Accueil</a>
+                <a href="#" class="hover:text-white transition">Mentions Légales</a>
+                <a href="index.html#contact" class="hover:text-white transition">Contact</a>
+            </div>
+            <div class="text-slate-600">
+                &copy; 2026 ELG Rénovation. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIQUE JAVASCRIPT EXCLUSIVE POUR LE BASULEMENT DES OFFRES -->
+    <script>
+        function switchService(serviceName) {
+            // Désactiver tous les boutons d'onglets
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Désactiver tous les panneaux de contenu
+            document.querySelectorAll('.service-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Activer l'onglet cliqué
+            // On retrouve le bouton via l'argument transmis dans la fonction
+            const clickedBtn = event.currentTarget;
+            clickedBtn.classList.add('active');
+            
+            // Activer le panneau ciblé avec une micro-transition fluide
+            const targetPanel = document.getElementById('panel-' + serviceName);
+            if(targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
